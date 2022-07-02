@@ -280,10 +280,10 @@ function animate(){
                                 y: letter.position.y + letter.height/2
                             },
                             velocity:{
-                                x: (Math.random() - 0.5)*2,
-                                y: (Math.random() - 0.5)
+                                x: (Math.random() - 0.5)*4,
+                                y: (Math.random() - 0.5)*4
                             },
-                            radius: Math.random() * 5
+                            radius: Math.random() * 7
                         }))
                     }
                     setTimeout(() => {
