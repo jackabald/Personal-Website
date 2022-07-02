@@ -1,8 +1,8 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = innerWidth
-canvas.height = innerHeight
+canvas.width = 1024
+canvas.height = 576
 
 class Player{
     constructor(){
@@ -20,7 +20,7 @@ class Player{
             this.height = image.height * scale
             this.position = {
                 x: canvas.width / 2 - this.width / 2,
-                y: canvas.height - this.height - 35
+                y: canvas.height - this.height
             }
         }
     }
@@ -72,8 +72,128 @@ class Projectile{
         this.position.y += this.velocity.y
     }
 }
+class J{
+    constructor(){
+        const image = new Image()
+        image.src = './img/J.png'
+        image.onload = () => {
+            const scale = 0.3
+            this.image = image
+            this.width = image.width * scale
+            this.height = image.height * scale
+            this.position = {
+                x: canvas.height/2 + 50,
+                y: canvas.width/2  - 420
+            }
+        }
+    }
+    draw(){
+        c.drawImage(
+            this.image,
+            this.position.x,
+            this.position.y, 
+            this.width,
+            this.height)
+    }
+    update(){
+    if(this.image){
+        this.draw()
+    }
+    }
+}
+class A{
+    constructor(){
+        const image = new Image()
+        image.src = './img/A.png'
+        image.onload = () => {
+            const scale = 0.28
+            this.image = image
+            this.width = image.width * scale
+            this.height = image.height * scale
+            this.position = {
+                x: canvas.height/2 + 100,
+                y: canvas.width/2 - 447
+            }
+        }
+    }
+    draw(){
+        c.drawImage(
+            this.image,
+            this.position.x,
+            this.position.y, 
+            this.width,
+            this.height)
+    }
+    update(){
+    if(this.image){
+        this.draw()
+    }
+    }
+}
+class C{
+    constructor(){
+        const image = new Image()
+        image.src = './img/C.png'
+        image.onload = () => {
+            const scale = 0.28
+            this.image = image
+            this.width = image.width * scale
+            this.height = image.height * scale
+            this.position = {
+                x: canvas.height/2 + 180,
+                y: canvas.width/2 - 447
+            }
+        }
+    }
+    draw(){
+        c.drawImage(
+            this.image,
+            this.position.x,
+            this.position.y, 
+            this.width,
+            this.height)
+    }
+    update(){
+    if(this.image){
+        this.draw()
+    }
+    }
+}
+class K{
+    constructor(){
+        const image = new Image()
+        image.src = './img/K.png'
+        image.onload = () => {
+            const scale = 0.28
+            this.image = image
+            this.width = image.width * scale
+            this.height = image.height * scale
+            this.position = {
+                x: canvas.height/2 + 260,
+                y: canvas.width/2 - 447
+            }
+        }
+    }
+    draw(){
+        c.drawImage(
+            this.image,
+            this.position.x,
+            this.position.y, 
+            this.width,
+            this.height)
+    }
+    update(){
+    if(this.image){
+        this.draw()
+    }
+    }
+}
 const player = new Player()
 const projectiles = []
+const jLetter = new J()
+const aLetter = new A()
+const cLetter = new C()
+const kLetter = new K()
 const keys = {
     a: {
         pressed: false
@@ -90,7 +210,14 @@ function animate(){
     requestAnimationFrame(animate)
     c.fillStyle = 'orange'
     c.fillRect(0,0,canvas.width,canvas.height)
-    player.update()   
+    c.fillStyle = 'white'
+    c.font = 'bold 18px Arial'
+    c.fillText("Hi, my name is", (canvas.width/2) - 175, (canvas.height/2) - 220)
+    jLetter.update() 
+    aLetter.update()
+    cLetter.update()
+    kLetter.update()
+    player.update()
     projectiles.forEach((projectile, index) => {
         if (projectile.position.y + projectile.radius <= 0){
             setTimeout(() => {
@@ -101,11 +228,11 @@ function animate(){
         }
     })
 
-    if (keys.a.pressed && player.position.x >= 0){
+    if (keys.a.pressed && player.position.x >= 3){
         player.velocity.x = -6
         player.rotation = -0.20
     } else if (keys.d.pressed && player.position.x +
-         player.width <= canvas.width){
+         player.width <= canvas.width - 3){
         player.velocity.x = 6
         player.rotation = 0.20
     } else {
