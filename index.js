@@ -72,6 +72,30 @@ class Projectile{
         this.position.y += this.velocity.y
     }
 }
+class Particle{
+    constructor({position, velocity, radius,}){
+        this.position = position
+        this.velocity = velocity
+        this.radius = radius
+    }
+    draw(){
+        c.beginPath()
+        c.arc(
+            this.position.x,
+            this.position.y,
+            this.radius,
+            0,
+            Math.PI * 2)
+        c.fillStyle = 'white'
+        c.fill()
+        c.closePath()
+    }
+    update(){
+        this.draw();
+        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
+    }
+}
 class J{
     constructor(){
         const image = new Image()
@@ -203,6 +227,7 @@ class Grid{
 const player = new Player()
 const projectiles = []
 const grid = new Grid()
+const particles = []
 const keys = {
     a: {
         pressed: false
@@ -223,6 +248,9 @@ function animate(){
     c.font = 'bold 18px Arial'
     c.fillText("Hi, my name is", (canvas.width/2) - 175, (canvas.height/2) - 220)
     player.update()
+    particles.forEach(particle => {
+        particle.update()
+    })
     projectiles.forEach((projectile, index) => {
         if (projectile.position.y + projectile.radius <= 0){
             setTimeout(() => {
@@ -243,10 +271,24 @@ function animate(){
                 projectile.position.x - projectile.radius <=
                 letter.position.x + letter.width && 
                 projectile.position.y + projectile.radius >=
-                letter.position.y){
+                letter.position.y
+                ){
+                    for(let i = 0; i < 50; i++){
+                        particles.push(new Particle({
+                            position:{
+                                x: letter.position.x + letter.width/2,
+                                y: letter.position.y + letter.height/2
+                            },
+                            velocity:{
+                                x: (Math.random() - 0.5)*2,
+                                y: (Math.random() - 0.5)
+                            },
+                            radius: Math.random() * 5
+                        }))
+                    }
                     setTimeout(() => {
-                        grid.letters.splice(i,1)
-                        projectiles.splice(j,1)
+                            grid.letters.splice(i,1)
+                            projectiles.splice(j,1)
                     },0)
                 }
         })
