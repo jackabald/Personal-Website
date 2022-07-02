@@ -111,8 +111,8 @@ class A{
             this.width = image.width * scale
             this.height = image.height * scale
             this.position = {
-                x: canvas.height/2 + 100,
-                y: canvas.width/2 - 447
+                x: canvas.height/2 + 110,
+                y: canvas.width/2 - 420
             }
         }
     }
@@ -140,8 +140,8 @@ class C{
             this.width = image.width * scale
             this.height = image.height * scale
             this.position = {
-                x: canvas.height/2 + 180,
-                y: canvas.width/2 - 447
+                x: canvas.height/2 + 190,
+                y: canvas.width/2 - 420
             }
         }
     }
@@ -169,8 +169,8 @@ class K{
             this.width = image.width * scale
             this.height = image.height * scale
             this.position = {
-                x: canvas.height/2 + 260,
-                y: canvas.width/2 - 447
+                x: canvas.height/2 + 270,
+                y: canvas.width/2 - 420
             }
         }
     }
@@ -188,12 +188,21 @@ class K{
     }
     }
 }
+class Grid{
+    constructor(){
+        this.position = {
+            x: 0,
+            y: 0
+        }
+        this.letters = [new J(), new A(), new C(), new K()]
+    }
+    update(){
+
+    }
+}
 const player = new Player()
 const projectiles = []
-const jLetter = new J()
-const aLetter = new A()
-const cLetter = new C()
-const kLetter = new K()
+const grid = new Grid()
 const keys = {
     a: {
         pressed: false
@@ -213,10 +222,6 @@ function animate(){
     c.fillStyle = 'white'
     c.font = 'bold 18px Arial'
     c.fillText("Hi, my name is", (canvas.width/2) - 175, (canvas.height/2) - 220)
-    jLetter.update() 
-    aLetter.update()
-    cLetter.update()
-    kLetter.update()
     player.update()
     projectiles.forEach((projectile, index) => {
         if (projectile.position.y + projectile.radius <= 0){
@@ -226,6 +231,25 @@ function animate(){
         } else{
             projectile.update()
         }
+    })
+    grid.update()
+    grid.letters.forEach((letter,i) => {
+        letter.update()
+        projectiles.forEach((projectile,j) => {
+            if(projectile.position.y - projectile.radius <=
+                letter.position.y + letter.height &&
+                projectile.position.x + projectile.radius >=
+                letter.position.x &&
+                projectile.position.x - projectile.radius <=
+                letter.position.x + letter.width && 
+                projectile.position.y + projectile.radius >=
+                letter.position.y){
+                    setTimeout(() => {
+                        grid.letters.splice(i,1)
+                        projectiles.splice(j,1)
+                    },0)
+                }
+        })
     })
 
     if (keys.a.pressed && player.position.x >= 3){
