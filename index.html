@@ -14,10 +14,19 @@
             justify-content: center;
             background-color: orange;
         }
+        span{
+            animation: blinker 1s linear infinite
+        }
+        @keyframes blinker{
+            50%{
+                opacity: 0;
+            }
+        }
     </style>
     <div>
         <canvas></canvas>
     </div>
+    <p id="message"></p>
     <script src = "./index.js"></script>
 </body>
 </html>

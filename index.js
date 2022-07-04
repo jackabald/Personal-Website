@@ -4,6 +4,8 @@ const c = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576
 
+var count = 0
+
 class Player{
     constructor(){
         this.velocity = {
@@ -224,6 +226,19 @@ class Grid{
 
     }
 }
+var messageArray = ["Jack Archibald"]
+var textPosition = 0
+var speed = 100
+typewriter = () => {
+    document.querySelector("#message").
+    innerHTML = messageArray[0].substring(0,textPosition) +
+    "<span>\u25ae</span>"
+
+    if(textPosition++ != messageArray[0].length){
+        setTimeout(typewriter, speed);
+    }
+}
+window.addEventListener("load", typewriter)
 const player = new Player()
 const projectiles = []
 const grid = new Grid()
@@ -273,6 +288,8 @@ function animate(){
                 projectile.position.y + projectile.radius >=
                 letter.position.y
                 ){
+                    count++
+                    console.log(count)
                     for(let i = 0; i < 50; i++){
                         particles.push(new Particle({
                             position:{
