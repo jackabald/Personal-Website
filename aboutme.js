@@ -1,4 +1,4 @@
-var messageArray = ["Jack Archibald - UW Madison Computer Sciences"]
+var messageArray = ["Jack Archibald - UW Madison Computer Science"]
 var textPosition = 0
 var speed = 100
 typewriter = () => {
