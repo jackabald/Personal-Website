@@ -14,8 +14,14 @@ body{
 .container{
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+}
+.floating{
+    position: absolute;
+    left: 70%;
+    top: 10%
 }
 span{
     animation: blinker 1s linear infinite
