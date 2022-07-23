@@ -12,9 +12,10 @@ body{
     color: white;
 }
 .container{
-    height: 100vh;
+    height: 200vh;
     display: flex;
     position: absolute;
+    padding: 14px 20px;
     left: 10%;
     top: 40%;
 }
