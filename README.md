@@ -1,5 +1,4 @@
-# personal-website
-Personal website, first time in HTML, CSS, and JavaScript.  
+# personal-website 
 Use A and D to move the spaceship left and right, and use the Spacebar to shoot.  
 
 ![Screenshot from 2023-09-24 17-54-03](https://github.com/jackabald/personal-website/assets/106791028/5036b3e2-228f-40c5-9671-8a6e2ae96ad1)
