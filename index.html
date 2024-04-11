@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <a href="aboutme.html">
-        <button class="button">About Me</button>
-    </a>
-    <div>
-        <canvas></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jack's Portfolio</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Jack</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home" class="hero-section">
+      <h1>Welcome To My Website!</h1>
+      <p>Discover my projects and adventures in coding.</p>
+      <a href="aboutme.html" class="btn-primary">Learn More About Me</a>
+    </section>
+    <div class="game-container">
+      <canvas></canvas>
     </div>
-    <script src = "./index.js"></script>
-</body>
+    <footer>
+      <p>
+        Contact me at
+        <a href="mailto:jwarchibald@wisc.edu">jwarchibald@wisc.edu</a>
+      </p>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
 </html>

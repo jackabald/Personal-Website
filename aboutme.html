@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="aboutme.css">
-</head>
-<body>
-
-    <div class="container">
-        <p id="message"></p>
-    </div>
-    <div class = "floating">
-        <img src = "./img/floating.png"> 
-    </div>
-    <script src = "./aboutme.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Jack</title>
+    <link rel="stylesheet" href="aboutme.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Jack</div>
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="about-section">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate developer with a love for creating engaging digital
+        experiences. My journey in coding began from a young age, and I've since
+        dedicated myself to learning and growing in this ever-evolving field.
+        Below are some projects I'm particularly proud of.
+      </p>
+    </section>
+    <section class="projects-section">
+      <h3>My Projects</h3>
+      <div class="projects-grid">
+        <!-- Example project -->
+        <div class="project-item">
+          <h4>Project Title</h4>
+          <p>
+            Short project description. What it does, what technologies were
+            used, etc.
+          </p>
+        </div>
+        <!-- Repeat for other projects -->
+      </div>
+    </section>
+    <footer>
+      <p>
+        Contact me at
+        <a href="mailto:jwarchibald@wisc.edu">jwarchibald@wisc.edu</a>
+      </p>
+    </footer>
+    <script src="./aboutme.js"></script>
+  </body>
 </html>

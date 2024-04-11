@@ -1,23 +1,65 @@
-*{
-    margin: 0;
-    padding: 0;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
 }
-body{
-    display: flex;
-    justify-content: center;
-    background-color: orange;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  padding: 0 20px;
 }
-.button{
-    border: none;
-    background-color: rgb(0, 157, 255);
-    color: white;
-    padding: 16px;
-    border-radius: 12px;
-    position: absolute;
-    top: 90%;
-    left: 44.5%;
+
+.nav-links li {
+  display: inline;
+  margin-left: 20px;
 }
-.button:hover{
-    background-color: rgb(255, 255, 255);
-    color: black
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #4caf50;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 100px 20px;
+  background: #eee;
+}
+
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
 }
