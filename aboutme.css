@@ -1,10 +1,23 @@
-body,
 html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  font-family: "Arial", sans-serif;
-  color: #333;
-  background: #f4f4f4;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
 }
 
 .navbar {
@@ -39,13 +52,19 @@ html {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
 }
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #000;
-  color: #fff;
+
+.project-item:nth-child(1) {
+  grid-column: 1;
+}
+
+.project-item:nth-child(2) {
+  grid-column: 2;
+}
+
+.project-item:nth-child(3) {
+  grid-column: 3;
 }

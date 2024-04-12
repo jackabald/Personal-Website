@@ -30,6 +30,13 @@ html {
   color: #4caf50;
 }
 
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
 .hero-section {
   text-align: center;
   padding: 100px 20px;
@@ -42,13 +49,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #000;
-  color: #fff;
 }
 
 .btn-primary {
