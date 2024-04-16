@@ -51,15 +51,24 @@ footer {
   align-items: center;
 }
 
-.btn-primary {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+.pushable {
+  background: hsl(340deg 100% 32%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  transform: translateY(-6px);
 }
 
-.btn-primary:hover {
-  background-color: #45a049;
+.pushable:active .front {
+  transform: translateY(-2px);
 }

@@ -1,5 +1,5 @@
 // Creates typewriter effect on AboutMe page.
-var messageArray = ["Jack Archibald - UW Madison Computer Science"];
+var messageArray = ["Jack Archibald - Programmer"];
 var textPosition = 0;
 var speed = 100;
 typewriter = () => {
