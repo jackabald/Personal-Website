@@ -1,5 +1,5 @@
-const canvas = document.querySelector("canvas");
-const c = canvas.getContext("2d");
+var canvas = document.getElementById("canvas");
+var c = canvas.getContext("2d");
 
 canvas.width = 1024;
 canvas.height = 576;
@@ -64,7 +64,7 @@ class Projectile {
   draw() {
     c.beginPath();
     c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
-    c.fillStyle = "white";
+    c.fillStyle = "black";
     c.fill();
     c.closePath();
   }
@@ -83,7 +83,7 @@ class Particle {
   draw() {
     c.beginPath();
     c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
-    c.fillStyle = "white";
+    c.fillStyle = "black";
     c.fill();
     c.closePath();
   }
@@ -143,15 +143,15 @@ const keys = {
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, canvas.width, canvas.height);
-  c.fillStyle = "orange";
-  c.fillRect(0, 0, canvas.width, canvas.height);
   c.fillStyle = "white";
-  c.font = "bold 18px Arial";
-  const text = "Hi, my name is,";
+  c.fillRect(0, 0, canvas.width, canvas.height);
+  c.fillStyle = "black";
+  c.font = "bold 24px arial";
+  const text = "Hi, my name is";
   const textWidth = c.measureText(text).width;
   const textX = canvas.width / 2 - textWidth / 2;
   const textY = 100;
-  c.fillText(text, textX, textY);
+  c.strokeText(text, textX, textY);
 
   positionLettersBelowText(textY + 30);
 
